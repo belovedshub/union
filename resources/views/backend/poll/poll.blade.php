@@ -26,6 +26,7 @@
                         <thead>
                         <tr>
                             <th>@lang('labels.backend.access.poll.poll_name')</th>
+                            <th>@lang('labels.backend.access.union.union_name')</th>
                             <th>@lang('labels.backend.access.poll.op1')</th>
                             <th>@lang('labels.backend.access.poll.op2')</th>
                             <th>@lang('labels.backend.access.poll.op3')</th>
@@ -34,7 +35,17 @@
                         </tr>
                         </thead>
                         <tbody>
-                        
+                            @foreach($pollAll as $poll)
+                            <tr>
+                                <td> {{ $poll->poll_name }} </td>
+                                <td> {{ $poll->get_union->union_name }} </td>
+                                <td> {{ $poll->poll_option_a }} </td>
+                                <td> {{ $poll->poll_option_b }} </td>
+                                <td> {{ $poll->poll_option_c }} </td>
+                                <td> {{ $poll->poll_option_d }} </td>
+                                <td> {{ $poll->poll_name }} </td>
+                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

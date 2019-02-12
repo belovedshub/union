@@ -33,6 +33,19 @@
                         </div><!--form-group-->
 
                         <div class="form-group row">
+                            {{ html()->label(__('validation.attributes.backend.access.union.union_name'))->class('col-md-2 form-control-label')->for('first_name') }}
+
+                            <div class="col-md-10">
+                                <select class="form-control" name="union_id" required>
+                                <option value="">Select Union</option>
+                                @foreach($unionAll as $union)
+                                    <option value="{{ $union->union_id }}">{{ $union->union_name }}</option>
+                                @endforeach    
+                                </select>
+                            </div><!--col-->
+                        </div><!--form-group-->
+
+                        <div class="form-group row">
                             {{ html()->label(__('validation.attributes.backend.access.poll.op1'))->class('col-md-2 form-control-label')->for('first_name') }}
 
                             <div class="col-md-10">

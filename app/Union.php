@@ -12,4 +12,8 @@ class Union extends Model
 {
     use SoftDeletes;
     //
+
+    public function with_poll() {
+        return $this->hasMany('App\Poll', 'union_id');
+    }
 }
